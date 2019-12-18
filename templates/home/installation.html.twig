@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class = "jumbotron">
+    <h2 align=center>SECURITY / ROLES </h2>
+    <HR size=2 align=center width="100%">
+      <h5>DA2 / CRP GUINOT </h5>
+</div>
+
+<div class="container">
+
+
+<h3>PROCEDURED'INSTALLATION SUR MA PROPRE APPLICATION</h3>
+<ul class="Style2"><li>    
+    <p>composer require friendsofsymfony/user-bundle</p>
+  </li>
+  <li>    
+    <p>The child node &quot;db_driver&quot; at path &quot;fos_user&quot; must be configured <br />
+      A ce niveau, changer les fichier ci-dessous de votre application par les ceux dans le module GIT </p>
+    <ul>
+      <ul>
+        <li>          
+          <p>config\packages\fos.yaml</p>
+        </li>
+        <li>          
+          <p>config\packages\security.yaml</p>
+        </li>
+        <li>          
+          <p>config\routes.yaml</p>
+        </li>
+      </ul>
+    </ul>
+  </li>
+  <li>    
+    <p>composer require friendsofsymfony/user-bundle </p>
+  </li>
+  <li>
+    <p>$ php bin/console make:entity    </p>
+    <ul>
+      <li>        
+        <p>Class name of the entity to create or update (e.g. GrumpyPizza):</p>
+      </li>
+      <li>        
+        <p>&nbsp;&gt; User</p>
+      </li>
+      <li>        
+        <p>New property name (press &lt;return&gt; to stop adding fields):</p>
+      </li>
+      <li>        
+        <p>&nbsp;&gt; nombre</p>
+      </li>
+    </ul>
+  </li>
+  <li>    
+    <p>$ php bin/console doctrine:schema:update &ndash;force</p>
+  </li>
+  <li>    
+    <p>$ php bin/console server:run</p>
+  </li>
+</ul>
+
+</div>
+{% endblock %}

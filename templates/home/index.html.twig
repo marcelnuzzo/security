@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class = "jumbotron">
+    <h2 align=center>SECURITY / ROLES </h2>
+    <HR size=2 align=center width="100%">
+      <h5>DA2 / CRP GUINOT </h5>
+</div>
+
+<div class="container">
+    <div>
+    
+<h3><strong>Pr&eacute;requis&nbsp;:</strong></h3>
+<ol>
+  <li>cloner le&nbsp;GIT</li>
+  <li>php bin/console doctrine:database:create</li>
+  <li>php bin/console make:entity User</li>
+  <li>php bin/console doctrine:schema:update &ndash;force</li>
+</ol>
+<ol start="4" type="1">
+  <ul type="square">
+    <li>Dans la DataBase vous verrez alors en localhost        l&rsquo;entity USER qui a beaucoup de propri&eacute;t&eacute;s qui servent pour la gestion        des Users et des Roles</li>
+  </ul>
+  <li>Utilisez le menu <a href="{{path('home')}}" >  Commande-CLI  </a>
+        
+        
+       du module pour les commandes       de cr&eacute;ation et d&rsquo;attribution de Role</li>
+  <li>Ceux qui veulent utiliser les path ou l&rsquo;URL pour       l&rsquo;enregistrement ou les modifications&nbsp;: la commande<br />
+    php bin/console debug&nbsp;:router</li>
+</ol>
+<HR size=2 align=center width="100%">
+      <h5 align=center>Georges Igor PALAKOT</h5>
+      <h5 align=center>DA2 / CRP GUINOT </h5>
+
+</div>
+{% endblock %}

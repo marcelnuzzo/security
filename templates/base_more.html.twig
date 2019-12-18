@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}AccessLog {% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheets"  href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css">     
+
+        {% block stylesheets %} 
+
+        {% endblock %}
+      
+    </head>
+    <body>
+
+
+   <nav class="navbar navbar-light bg-primary " >
+      <form class="form-inline">
+        <a href="#" > 
+              <button class="btn btn-outline-success bg-dark" type="button"  bg-dark>ACCUEIL</button> 
+        </a>
+        
+        <a href="# > 
+          <button class="btn btn-sm btn-outline-secondary bg-dark" type="button" >A Propos</button>
+        </a>
+      
+        <a href="#" >
+          <button class="btn btn-sm btn-outline-secondary bg-dark" type="button"  >Articles</button>
+        </a>
+        
+        <a href="#" >
+          <button class="btn btn-sm btn-outline-secondary bg-dark" type="button"  >Livres</button>
+        </a>
+      
+        <a href="#" >
+          <button class="btn btn-sm btn-outline-secondary" type="button" >Nous Contacter</button>
+        </a>
+
+        <a href="# target="blank">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Admin</button>
+        </a>
+
+        <a href="#" target="blank">
+          <button class="btn btn-sm btn-outline-secondary" type="button">Tools</button>
+        </a>
+      </form>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+        {% block body %}
+
+
+        
+        {% endblock %}
+
+        {% block footer %}
+
+            <div class="row bg-dark" >
+                <div class="col-sm-6 ">
+                  <div class="card">
+                    <div class="card-body bg-dark">
+                      <h5 class="card-title text-light">A propos de l'Agence</h5>
+                      <p class="card-text text-light">
+                            24-26 bd Chastenet de Géry </br>
+                            94814 Villejuif Cedex </br>
+                            Tél : 01 46 78 01 00 </br>
+                            Fax : 01 46 78 50 35 </br>
+                            paulguinot@guinot.asso.fr
+                      </p>
+                      <a href="#" class="btn btn-primary">Mapper notre Agence !</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="card">
+                    <div class="card-body bg-info">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <a href="#" class="btn btn-primary">Mapper notre Agence !</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        {% endblock %}
+
+        
+
+        {% block javascripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class = "jumbotron">
+    <h2 align=center>SECURITY / ROLES </h2>
+    <HR size=2 align=center width="100%">
+      <h5>DA2 / CRP GUINOT </h5>
+</div>
+
+<div class="container">
+    <div>
+    
+<strong><u>CLI  / Gestion des Users</u></strong><br />
+  <strong><u><br />
+    Cr&eacute;er un utilisateur </u></strong><br />
+<strong>fos:user:create<u></u></strong>
+<ul>
+  <li>Vous  pouvez utiliser la commande fos:user:create pour cr&eacute;er un nouvel utilisateur  pour votre application.<strong><u></u></strong></li>
+  <li>La  commande prend trois arguments, le <strong>usernam</strong>e  , l' email et le password de l'utilisateur que vous cr&eacute;ez<strong><u></u></strong></li>
+  <li><em>Par exemple, si vous souhaitez cr&eacute;er  un utilisateur avec le nom d'utilisateur <strong>stagiaire10</strong>,  avec l'e-mail <strong>test@example.com</strong> et le  mot de passe <strong>p@ssword</strong>, vous  ex&eacute;cuterez la commande comme suit.<br />
+        <strong>$ php bin/console fos:user:create stagiaire10  test@example.com</strong> <strong>p@ssword<br />
+        </strong></em><strong>$ php bin/console fos:user:create  stagiaire10<br />
+        </strong><strong><em><u> </u></em></strong><br />
+        <strong>--super-admin<br />
+  </strong>
+        <ul>
+          <li>La  sp&eacute;cification de l'option <strong>--super-admin</strong> marquera l'utilisateur en tant que super administrateur lors de sa cr&eacute;ation. <strong></strong></li>
+          <li>Un  super administrateur a acc&egrave;s &agrave; n'importe quelle partie de votre application. Un  exemple est fourni ci-dessous:<br />
+            <strong><em>$  php bin/console fos:user:create adminuser --super-admin</em></strong></li>
+        </ul>
+  </li>
+   
+    <br />
+  </strong><strong>--inactive</strong>.<ul>
+    <li>Si  vous sp&eacute;cifiez l'option --inactive, l'utilisateur que vous cr&eacute;ez ne pourra pas  se connecter tant qu'il ne sera pas activ&eacute;.<br />
+      <strong><em>$  php bin/console fos:user:create stagiaire10 --inactive</em></strong></li>
+  </ul>
+  </li>
+</ul>
+<strong><u> Activer l'utilisateur</u></strong><u> </u><br />
+<strong>fos:user:activate </strong>
+<ul>
+  <li>La  commande <strong>fos:user:activate</strong> active un  utilisateur inactif. <strong></strong></li>
+  <li>Le  seul argument requis par la commande est le username de l'utilisateur qui doit  &ecirc;tre activ&eacute;. <strong></strong><br />
+    <strong>$ php bin/console fos:user:activate  stagiaire10</strong></li>
+</ul>
+<strong><u>D&eacute;sactiver un utilisateur</u></strong><br />
+fos:user:deactivate <ul>
+  <li>fos:user:deactivate  d&eacute;sactive un utilisateur. Tout comme la commande activate, </li>
+  <li>le  seul argument requis est le username de l'utilisateur qui doit &ecirc;tre activ&eacute;. <br />
+  <strong>$ php bin/console fos:user:deactivate  stagiaire10</strong> </li>
+</ul>
+  <strong><u>Promouvoir  un utilisateur </u></strong><br />
+fos:user:promote<strong></strong>
+<ul>
+  <li>fos:user:promote  vous permet d'ajouter un r&ocirc;le &agrave; un utilisateur ou de faire de l'utilisateur un  super administrateur.</li>
+  <li>Si  vous souhaitez ajouter un r&ocirc;le &agrave; un utilisateur, vous passez simplement le  username de l'utilisateur comme premier argument &agrave; la commande et le role &agrave;  ajouter &agrave; l'utilisateur comme deuxi&egrave;me.
+    <ul>
+      <li><strong><em>$  php bin/console fos:user:promote stagiaire10 ROLE_ADMIN</em></strong></li>
+    </ul>
+  </li>
+  
+  <li>Vous  pouvez promouvoir un utilisateur &agrave; un super administrateur en passant l'option  --super apr&egrave;s avoir sp&eacute;cifi&eacute; le username.
+    <ul>
+      <li><strong><em>$  php bin/console fos:user:promote stagiaire10 &ndash;super</em></strong></li>
+    </ul>
+  </li>
+  <li>Si  aucun des arguments de la commande n'est sp&eacute;cifi&eacute;, une invite interactive vous  demandera de les saisir.</li>
+</ul>
+<strong><u>R&eacute;trograder  l'utilisateur</u></strong><strong><u> </u></strong><br />
+fos:user:demote<strong><u></u></strong>
+<ul>
+  <li>fos:user:demote  est similaire &agrave; la commande de promotion, sauf qu'au lieu d'ajouter un r&ocirc;le &agrave;  l'utilisateur, elle le supprime. </li>
+  <li>Vous  pouvez &eacute;galement r&eacute;voquer le statut de super administrateur d'un utilisateur  avec cette commande</li>
+  <li>Si  vous souhaitez supprimer un r&ocirc;le d'un utilisateur, vous passez simplement le  username d' username de l'utilisateur comme premier argument &agrave; la commande et  le role &agrave; supprimer comme deuxi&egrave;me.
+    <ul>
+      <li><strong><em>$  php bin/console fos:user:demote stagiaire10 ROLE_ADMIN</em></strong></li>
+    </ul>
+  </li>
+  
+  <li>Pour  r&eacute;voquer le statut de super administrateur d'un utilisateur, passez simplement  le username d' username en argument &agrave; la commande ainsi que l'option --super .
+    <ul>
+      <li><strong><em>$  php bin/console fos:user:demote stagiaire10 --super</em></strong></li>
+    </ul>
+  </li>
+  
+  <li>Vous  ne pouvez pas sp&eacute;cifier simultan&eacute;ment l'argument role et l'option --super .</li>
+  <li>Les  modifications ne seront appliqu&eacute;es qu'apr&egrave;s d&eacute;connexion et reconnexion de  l'utilisateur. Cela a des implications sur la fa&ccedil;on dont vous configurez les  sessions dans votre application, car vous voulez vous assurer que les  utilisateurs sont r&eacute;trograd&eacute;s le plus rapidement possible.</li>
+</ul>
+<strong><u>Changer  le mot de passe d'un utilisateur </u></strong><br />
+fos:user:change-password<strong><u></u></strong>
+<ul>
+  <li>La  commande fos:user:change-password fournit un moyen simple de modifier le mot de  passe d'un utilisateur. </li>
+  <li>La  commande prend deux arguments, le username d' username de l'utilisateur dont  vous souhaitez modifier le password et le nouveau password .</li>
+</ul>
+  <strong><em>$  php bin/console fos:user:change-password stagiaire10 newp@ssword</em></strong>
+  <hr />
+
+
+</div>
+{% endblock %}
