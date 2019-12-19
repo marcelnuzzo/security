@@ -19,21 +19,21 @@ class User extends BaseUser
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $nombre;
+    private $username;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNombre(): ?string
+    public function getUsername(): ?string
     {
-        return $this->nombre;
+        return $this->username;
     }
 
-    public function setNombre(?string $nombre): self
+    public function setUsername(?string $username): self
     {
-        $this->nombre = $nombre;
+        $this->username = $username;
 
         return $this;
     }
