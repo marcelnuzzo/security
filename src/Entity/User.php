@@ -1,40 +1,27 @@
 <?php
+// src/Entity/User.php
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  */
 class User extends BaseUser
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $username;
-
-    public function getId(): ?int
+    public function __construct()
     {
-        return $this->id;
-    }
-
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(?string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
+        parent::__construct();
+        // your own logic
     }
 }
