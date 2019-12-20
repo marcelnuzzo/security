@@ -7,9 +7,9 @@ fos_user:
     user_class: App\Entity\User
 
     from_email:
-        address: "mailer@yourdomain.com"
-        sender_name: "Ipalakot"
+        address: "nuzzo.marcel@aliceadsl.fr"
+        sender_name: "marcel"
         
 framework:
     templating:
-        engines: ['twig']
+        engines: ['twig','php']
